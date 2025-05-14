@@ -1,0 +1,1 @@
+module.exports = { env: { REACT_APP_OPENAI_API_KEY: process.env.REACT_APP_OPENAI_API_KEY || process.env.react_app_openai_api_key }, webpack: (config, { buildId, dev, isServer, defaultLoaders, webpack }) => { return config; }, publicRuntimeConfig: { REACT_APP_OPENAI_API_KEY: process.env.REACT_APP_OPENAI_API_KEY || process.env.react_app_openai_api_key } };

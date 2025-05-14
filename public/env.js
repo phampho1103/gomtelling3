@@ -1,0 +1,3 @@
+window.env = {
+  REACT_APP_OPENAI_API_KEY: "your-openai-api-key-here"
+}; 

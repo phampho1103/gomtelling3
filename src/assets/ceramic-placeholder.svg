@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="300" height="400" viewBox="0 0 300 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M150 50C130 50 120 60 120 80C120 100 130 120 150 120C170 120 180 100 180 80C180 60 170 50 150 50Z" fill="#B87333"/>
+  <path d="M120 80C120 80 110 100 100 150C90 200 90 300 150 350C210 300 210 200 200 150C190 100 180 80 180 80C180 80 170 100 150 100C130 100 120 80 120 80Z" fill="#B87333"/>
+  <path d="M130 180C130 180 140 200 150 200C160 200 170 180 170 180C170 180 160 190 150 190C140 190 130 180 130 180Z" fill="#8B4513"/>
+  <text x="150" y="380" text-anchor="middle" font-family="Arial" font-size="16" fill="#333">Bình Gốm</text>
+</svg> 

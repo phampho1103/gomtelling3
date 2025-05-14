@@ -1,0 +1,49 @@
+{
+  "name": "gomtelling",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@testing-library/dom": "^10.4.0",
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.3.0",
+    "@testing-library/user-event": "^13.5.0",
+    "openai": "^4.98.0",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "react-icons": "^5.5.0",
+    "react-scripts": "5.0.1",
+    "styled-components": "^6.1.18",
+    "web-vitals": "^2.1.4"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "generate-env": "node -e \"require('fs').writeFileSync('./public/env.js', 'window.env = ' + JSON.stringify({REACT_APP_OPENAI_API_KEY: process.env.REACT_APP_OPENAI_API_KEY || ''}) + ';')\"",
+    "prebuild": "npm run generate-env",
+    "vercel-build": "CI=false react-scripts build && node -e \"console.log('Creating env.js with API key from environment'); const apiKey = process.env.REACT_APP_OPENAI_API_KEY || ''; console.log('API key available:', apiKey ? 'Yes' : 'No'); require('fs').writeFileSync('./build/env.js', 'window.env = ' + JSON.stringify({REACT_APP_OPENAI_API_KEY: apiKey}) + ';'); console.log('env.js created successfully');\""
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "netlify-plugin-inline-functions-env": "^1.0.9",
+    "netlify-plugin-inline-source": "^1.0.4"
+  }
+}
