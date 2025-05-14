@@ -13,13 +13,19 @@ const Container = styled.div`
   text-align: center;
   overflow: hidden;
   position: relative;
+  
+  @media (max-width: 768px) {
+    padding: 0.5rem;
+    height: 100vh;
+    overflow-y: auto;
+  }
 `;
 
 const Header = styled.header`
   margin-bottom: 0.5rem;
   
   @media (max-width: 768px) {
-    margin-bottom: 0.3rem;
+    margin-bottom: 0.2rem;
   }
 `;
 
@@ -29,8 +35,8 @@ const Logo = styled.h1`
   margin-bottom: 0.5rem;
   
   @media (max-width: 768px) {
-    font-size: 2rem;
-    margin-bottom: 0.3rem;
+    font-size: 1.8rem;
+    margin-bottom: 0.2rem;
   }
 `;
 
@@ -43,6 +49,11 @@ const MainContent = styled.main`
   max-width: 1200px;
   flex: 1;
   justify-content: center;
+  
+  @media (max-width: 768px) {
+    justify-content: flex-start;
+    margin-top: 0.5rem;
+  }
 `;
 
 const CeramicSection = styled.div`
@@ -56,7 +67,11 @@ const CeramicSection = styled.div`
   @media (max-width: 768px) {
     flex-direction: column;
     justify-content: flex-start;
-    height: 80vh;
+    height: auto;
+    margin-bottom: 5rem;
+    position: relative;
+    padding-top: 20px;
+    padding-bottom: 20px;
   }
 `;
 
@@ -72,7 +87,10 @@ const CeramicImageContainer = styled.div`
   @media (max-width: 768px) {
     width: 280px;
     height: 280px;
-    margin-bottom: 0;
+    margin: 0.5rem 0 2rem 0;
+    position: relative;
+    z-index: 1;
+    order: -1;
   }
 `;
 
@@ -113,6 +131,11 @@ const CeramicImg1 = styled(CeramicImg)`
   z-index: 10;
   left: 0%;
   opacity: 0.95;
+  
+  @media (max-width: 768px) {
+    width: 85%;
+    left: -5%;
+  }
 `;
 
 const CeramicImg2 = styled(CeramicImg)`
@@ -120,6 +143,11 @@ const CeramicImg2 = styled(CeramicImg)`
   z-index: 11;
   right: 0%;
   filter: drop-shadow(0 0 5px rgba(0,0,0,0.2));
+  
+  @media (max-width: 768px) {
+    width: 90%;
+    right: -5%;
+  }
 `;
 
 const Description = styled.p`
@@ -134,10 +162,10 @@ const Description = styled.p`
   z-index: 5;
   
   @media (max-width: 768px) {
-    font-size: 0.9rem;
-    padding: 0.6rem;
-    margin-bottom: 0.6rem;
-    line-height: 1.4;
+    font-size: 0.85rem;
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.3;
   }
 `;
 
@@ -151,13 +179,13 @@ const InfoSection = styled.section`
   
   @media (max-width: 768px) {
     position: relative;
-    height: 100%;
+    height: auto;
     width: 100%;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto auto;
-    gap: 0.8rem;
-    padding: 0 0.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 0.3rem;
   }
 `;
 
@@ -204,50 +232,37 @@ const InfoCard = styled.div`
   
   @media (max-width: 768px) {
     position: relative;
-    width: 100%;
-    padding: 0.8rem;
-    top: auto;
-    right: auto;
-    bottom: auto;
-    left: auto;
+    width: 90%;
+    max-width: 300px;
+    padding: 0.6rem;
+    margin-bottom: 1rem;
+    min-height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     
-    &:nth-child(1) {
-      grid-column: 1;
-      grid-row: 1;
-      top: auto;
-      right: auto;
-    }
-    
-    &:nth-child(2) {
-      grid-column: 2;
-      grid-row: 1;
-      bottom: auto;
-      right: auto;
-    }
-    
-    &:nth-child(3) {
-      grid-column: 1 / span 2;
-      grid-row: 2;
+    &:nth-child(1), &:nth-child(2), &:nth-child(3) {
       top: auto;
       left: auto;
-      max-width: 70%;
-      margin: 0 auto;
+      right: auto;
+      bottom: auto;
+      transform: none;
+      z-index: 5;
     }
     
     &:nth-child(4) {
-      grid-column: 1 / span 2;
-      grid-row: 3;
-      margin: 0 auto;
-      z-index: 15;
+      display: none;
     }
     
     h3 {
-      font-size: 0.9rem;
+      font-size: 0.85rem;
       margin-bottom: 0.3rem;
     }
     
     p {
       font-size: 0.8rem;
+      margin: 0;
+      line-height: 1.3;
     }
     
     &:hover {
@@ -265,6 +280,16 @@ const ChatContainerWrapper = styled.div`
   z-index: 50;
   display: flex;
   justify-content: center;
+  
+  @media (max-width: 768px) {
+    position: fixed;
+    bottom: 0.5rem;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    padding: 0 0.5rem;
+    z-index: 100;
+  }
 `;
 
 const ChatContainer = styled.div`
@@ -344,6 +369,7 @@ const ChatButton = styled.button`
   @media (max-width: 768px) {
     padding: 10px 15px;
     font-size: 0.9rem;
+    white-space: nowrap;
   }
 `;
 
@@ -408,6 +434,19 @@ const HomePage = () => {
       <MainContent>
         <CeramicSection>
           <InfoSection>
+            <CeramicImageContainer>
+              <CeramicImg1 
+                src={ceramicImage1} 
+                alt="Bình gốm 1" 
+                animation="float1"
+              />
+              <CeramicImg2 
+                src={ceramicImage2} 
+                alt="Bình gốm 2" 
+                animation="float2"
+              />
+            </CeramicImageContainer>
+            
             <InfoCard>
               <h3>🏺 Kho tàng kiến thức</h3>
               <p>Tìm hiểu về lịch sử, kỹ thuật và bí quyết làm gốm từ các nghệ nhân truyền thống.</p>
@@ -422,19 +461,6 @@ const HomePage = () => {
               <h3>🎨 Sáng tạo không giới hạn</h3>
               <p>Khám phá các ý tưởng, mẫu thiết kế và kỹ thuật trang trí để tạo ra tác phẩm độc đáo.</p>
             </InfoCard>
-            
-            <CeramicImageContainer>
-              <CeramicImg1 
-                src={ceramicImage1} 
-                alt="Bình gốm 1" 
-                animation="float1"
-              />
-              <CeramicImg2 
-                src={ceramicImage2} 
-                alt="Bình gốm 2" 
-                animation="float2"
-              />
-            </CeramicImageContainer>
           </InfoSection>
         </CeramicSection>
         
