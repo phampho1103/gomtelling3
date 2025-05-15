@@ -2,32 +2,8 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Cấu hình API Key
-
-Để chạy ứng dụng, bạn cần cấu hình OpenAI API key:
-
-### Cho môi trường phát triển (local)
-
-1. Tạo file `public/env.js` từ file mẫu `public/env.example.js`:
-   ```
-   cp public/env.example.js public/env.js
-   ```
-
-2. Chỉnh sửa file `public/env.js` và thêm API key của bạn:
-   ```javascript
-   window.env = {
-     REACT_APP_OPENAI_API_KEY: "your-openai-api-key-here"
-   };
-   ```
 
 ### Cho môi trường Vercel
-
-Thêm biến môi trường `REACT_APP_OPENAI_API_KEY` trong cài đặt dự án trên Vercel:
-1. Vào trang dashboard của dự án trên Vercel
-2. Chọn "Settings" > "Environment Variables"
-3. Thêm biến môi trường `REACT_APP_OPENAI_API_KEY` với giá trị là API key của bạn
-
-**Lưu ý quan trọng:** File `public/env.js` đã được thêm vào `.gitignore` để tránh đẩy API key lên GitHub. Không bao giờ commit file này lên repository.
 
 ## Available Scripts
 
